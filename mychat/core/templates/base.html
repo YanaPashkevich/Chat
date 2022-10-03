@@ -71,12 +71,12 @@
 
            <span class="text-white"> Hello, <a href="#"> user.username </a></span>
         
-            <a role="button" class="btn btn-secondary" href="#" >Logout</a>
+            <a role="button" class="btn btn-secondary" href="{% url 'logout' %} " >Logout</a>
             
             {% else %}
 
-            <a role="button" class="btn btn-secondary" href="{% url "sign_up"%}">Sign up</a>
-            <a role="button" class="btn btn-secondary" href="#">Sing in</a>
+            <a role="button" class="btn btn-secondary" href="{% url 'sign_up'%}">Sign up</a>
+            <a role="button" class="btn btn-secondary" href="{% url 'login'%}">Sing in</a>
             
             {% endif %}
 
@@ -92,17 +92,6 @@
 
 
     </nav>
-        {% if user.is_authenticated %}
-        <div class="container d-flex justify-content-between">
-          <span><b>Your cart</b></span>
-          <span></span>
-          {% if cart.get_total_quantity == 0 %}
-          <a href="{% url 'cart_view' %}"><b class="badge badge-secondary">Your cart is empty</b></a>
-          {% else %}
-          <a href="{% url 'cart_view' %}"><b class="badge badge-secondary">Cart:{{ cart.get_total_quantity }}</b></a>
-          {% endif %}
-        </div>
-        {% endif %}
 
   </header>
 
