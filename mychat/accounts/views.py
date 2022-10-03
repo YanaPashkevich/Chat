@@ -2,10 +2,8 @@ from django.shortcuts import render
 
 # Create your views here.
 from django.shortcuts import render
-from .forms import ProfileForm
-from .models import Profile
+from .forms import ProfileForm, UserForm
 from django.contrib.auth.decorators import login_required
-from core.forms import SingUpForm
 
 
 
@@ -13,15 +11,15 @@ from core.forms import SingUpForm
 @login_required
 def profile(request):
     if request.method == "POST":
-        sign_up_form = SingUpForm(instance=request.user, data=request.POST)
+        user_form = UserForm(instance=request.user, data=request.POST)
         profile_form = ProfileForm(request.POST, request.FILES, instance=request.user.profile)
-        if sign_up_form.is_valid() and profile_form.is_valid():
-            sign_up_form.save()
+        if user_form.is_valid() and profile_form.is_valid():
+            user_form.save()
             profile_form.save()    
 
-    sign_up_form = SingUpForm(instance=request.user)
+    user_form = UserForm(instance=request.user)
     profile_form = ProfileForm(instance=request.user.profile)
-    dict['sign_up_form'] = sign_up_form
+    dict['user_form'] = user_form
     dict['profile_form'] = profile_form
 
     return render(request, 'profile.html', dict)
