@@ -19,7 +19,5 @@ def profile(request):
 
     user_form = UserForm(instance=request.user)
     profile_form = ProfileForm(instance=request.user.profile)
-    dict['user_form'] = user_form
-    dict['profile_form'] = profile_form
 
-    return render(request, 'profile.html', dict)
+    return render(request, 'profile.html', {'user_form':user_form, 'profile_form':profile_form})
