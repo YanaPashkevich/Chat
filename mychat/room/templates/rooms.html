@@ -1,0 +1,23 @@
+
+
+{% extends 'base.html' %}
+
+{% block content %} 
+<br>
+<div class="container">
+    <div class="row">
+        {% for room in rooms %}
+            <div class="col-md-4"> 
+                <div class="card mb-4 box-shadow">
+                <span>
+                <p class="card-text">{{ room.name }}</p>
+                </span>
+                <a href="{% url 'room' room.slug %}" role="button" class="btn btn-sm btn-outline-secondary">Join</a>
+                
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+  </div>
+  </br>
+{% endblock %}

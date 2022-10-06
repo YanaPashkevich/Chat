@@ -62,7 +62,12 @@
         <div class="navbar navbar-dark bg-dark box-shadow">
           <div class="container d-flex justify-content-between">
             <a href="{% url "index" %}" class="navbar-brand d-flex align-items-center">
+            {% if user.is_authenticated %}
               <strong>MyChat</strong>
+              <a role="button" class="btn btn-secondary" href="{% url 'rooms'%}">Rooms</a>
+              {% else %}
+              <strong>MyChat</strong>
+              {% endif %}
             </a>
             
           <div>
