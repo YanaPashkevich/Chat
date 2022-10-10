@@ -39,8 +39,8 @@ textarea {
 {% csrf_token %}
 
   {% if user.profile.get_photo_url != NULL %}
-  <img class="card-img-top" src="{{ profile.get_photo_url }}" data-holder-rendered="true" data-holder-rendered="true" style="width: 225px; height: 100%; display: block;">
-    {% else %}
+  <img class="card-img-top" src="{% static user.profile.get_photo_url %}" data-holder-rendered="true" data-holder-rendered="true" style="width: 225px; height: 100%; display: block;">
+  {% else %}
   <img class="card-img-top" src="https://upload.wikimedia.org/wikipedia/commons/6/65/No-Image-Placeholder.svg" data-holder-rendered="true" style="width: 225px; height: 100%; display: block;">            
   {% endif %}
 
