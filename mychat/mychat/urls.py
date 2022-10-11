@@ -22,5 +22,6 @@ urlpatterns = [
     path('accounts/', include('django.contrib.auth.urls')),
     path('accounts/', include('accounts.urls')),
     path('room/', include('room.urls')),
+    path('agora/', include('agora.urls'))
 
 ]
