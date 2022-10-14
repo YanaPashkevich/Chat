@@ -36,7 +36,13 @@
       border-radius: 3px;
     }
 
-    .chat-messages {
+    body { 
+    background-image: radial-gradient(#ffffff 2px, transparent 2px), radial-gradient(#ffffff 2px, transparent 2px);
+    background-size: 64px 64px;
+    background-position: 0 0, 32px 32px;
+    background-color: #d9e1e3; }
+
+    chat-messages {
       height: 400px
       overflow-y: auto
     }
@@ -67,12 +73,8 @@
         <div class="navbar navbar-dark bg-dark box-shadow">
           <div class="container d-flex justify-content-between">
             <a href="{% url "index" %}" class="navbar-brand d-flex align-items-center">
-            {% if user.is_authenticated %}
+          
               <strong>MyChat</strong>
-              <a role="button" class="btn btn-secondary" href="{% url 'rooms'%}">Rooms</a>
-              {% else %}
-              <strong>MyChat</strong>
-              {% endif %}
             </a>
             
           <div>
