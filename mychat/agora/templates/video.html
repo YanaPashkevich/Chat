@@ -4,21 +4,11 @@
 
 {% block content %}
 
-<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Build A Scalable Video Chat Application With Agora"
-    />
-    <meta
-      name="keywords"
-      content="Video Call, Agora, Django, Real Time Engagement"
-    />
-    <meta name="author" content="Kofi Obrasi Ocran" />
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
@@ -31,7 +21,6 @@
       href="{% static 'agora/CSS/video.css' %}"
     />
     <script src="https://cdn.agora.io/sdk/release/AgoraRTCSDK-3.3.1.js"></script>
-    <title>Agora Video Chat Django</title>
   </head>
   <body>
     <main id="app">
@@ -129,11 +118,9 @@
       const CSRF_TOKEN = "{{ csrf_token }}"
     </script>
     <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
-    ></script>
+      src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="{% static 'agora/js/video.js' %}"></script>
   </body>
-</html>
 
 {% endblock %}
