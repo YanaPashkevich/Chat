@@ -9,4 +9,4 @@ urlpatterns = [
     path('token/', views.generate_agora_token, name='agora-token'),
     path('call-user/', views.call_user, name='agora-call-user'),
 
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+] 
