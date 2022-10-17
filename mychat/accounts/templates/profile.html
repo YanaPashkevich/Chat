@@ -4,7 +4,7 @@
 
 {% block content %}
 
-<h2> Edit your Profile </h2>
+<h2 class='container'> Edit your Profile </h2>
 <head>
 <style>
 
@@ -35,7 +35,8 @@ textarea {
 </style>
 </head>
 
-<form method="POST" action="" enctype="multipart/form-data">
+
+<form method="POST" action="" class="container" enctype="multipart/form-data">
 {% csrf_token %}
 
   {% if user.profile.get_photo_url != NULL %}
