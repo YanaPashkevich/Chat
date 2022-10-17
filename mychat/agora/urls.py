@@ -4,9 +4,11 @@ from django.conf.urls.static import static
 from django.conf import settings
 
 urlpatterns = [
-    path('video/', views.video, name='agora-index'),
-    path('pusher/auth/', views.pusher_auth, name='agora-pusher-auth'),
-    path('token/', views.generate_agora_token, name='agora-token'),
-    path('call-user/', views.call_user, name='agora-call-user'),
+    path('', views.lobby, name='agora-index'),
+    path('room/', views.room, name='room'),
+    path('get_token/', views.getToken),
 
-] 
+    path('create_member/', views.createMember),
+    path('get_member/', views.getMember),
+    path('delete_member/', views.deleteMember),
+]
