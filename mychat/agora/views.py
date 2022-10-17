@@ -21,7 +21,7 @@ pusher_client = Pusher (app_id='1482662',
                        
 
 
-@login_required(login_url='/admin/')
+@login_required(login_url='/main/')
 def video(request):
     User = get_user_model()
     all_users = User.objects.exclude(id=request.user.id).only('id', 'username')

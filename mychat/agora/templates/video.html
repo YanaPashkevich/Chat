@@ -37,9 +37,7 @@
                   @click="placeCall('{{singleUser.id}}','{{singleUser}}')"
                 >
                   Call {{ singleUser }}
-                  <span class="badge badge-light"
-                    >${ getUserOnlineStatus({{singleUser.id}})}</span
-                  >
+                  <span class="badge badge-light">${ getUserOnlineStatus({{singleUser.id}})}</span>
                 </button>
 
                 {% endfor %}
